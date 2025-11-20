@@ -1,0 +1,19 @@
+/:
+  controller: Base
+  action: index
+
+/contact:
+  controller: Base
+  action: contact
+
+/login:
+  controller: Auth
+  action: login
+
+/logout:
+    controller: Auth
+    action: logout
+
+/register:
+  controller: Auth
+  action: register
