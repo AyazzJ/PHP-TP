@@ -1,9 +1,26 @@
-<form method="post">
-    <label for="username">Nom d'utilisateur :</label>
-    <input type="text" id="username" name="username" required><br>
+<div class="auth-container">
+    <h2>Connexion</h2>
 
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="password" required><br>
+    <?php if (!empty($error)): ?>
+        <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
 
-    <button type="submit">Se connecter</button>
-</form>
+    <form method="POST" action="/phptest/login">
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+
+    <p class="auth-links">
+        <a href="/phptest/register">S'inscrire</a> |
+        <a href="/phptest/password-reset">Mot de passe oublié ?</a>
+    </p>
+</div>

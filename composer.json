@@ -1,0 +1,13 @@
+{
+    "name": "buffetantonin/projetphp",
+    "description": "PHP Web Application",
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "ext-yaml": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "www/"
+        }
+    }
+}

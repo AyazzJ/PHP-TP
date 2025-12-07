@@ -1,29 +1,40 @@
 <?php
 namespace App\Core;
-class Render{
 
+class Render
+{
     private string $viewPath;
     private string $templatePath;
     private array $data = [];
-    public function __construct(string $view, string $template="frontoffice"){
+    private string $basePath;
+
+    public function __construct(string $view, string $template = "frontoffice")
+    {
+        // Get the base path of the www directory
+        $this->basePath = __DIR__ . "/..";
         $this->setViewPath($view);
         $this->setTemplatePath($template);
     }
 
-    public function setViewPath(string $view): void{
-        $this->viewPath = "../Views/".$view.".php";
+    public function setViewPath(string $view): void
+    {
+        $this->viewPath = $this->basePath . "/Views/" . $view . ".php";
     }
 
-    public function setTemplatePath(string $template): void{
-        $this->templatePath = "../Views/Templates/".$template.".php";
+    public function setTemplatePath(string $template): void
+    {
+        $this->templatePath = $this->basePath . "/Views/Templates/" . $template . ".php";
     }
 
-    public function assign(string $key, string $value){
+    public function assign(string $key, $value): void
+    {
         $this->data[$key] = $value;
     }
 
-    public function render(): void{
+    public function render(): void
+    {
         extract($this->data);
+        $viewPath = $this->viewPath;
         include $this->templatePath;
     }
 }

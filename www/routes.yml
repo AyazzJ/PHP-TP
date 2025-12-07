@@ -2,6 +2,42 @@
   controller: Auth
   action: login
 
+/login:
+  controller: Auth
+  action: login
+
+/dashboard:
+  controller: Auth
+  action: dashboard
+
+/register:
+  controller: Auth
+  action: register
+
+/password-reset:
+  controller: Auth
+  action: passwordReset
+
+/reset-password:
+  controller: Auth
+  action: resetPasswordForm
+
+/logout:
+  controller: Auth
+  action: logout
+
+/verify-email:
+  controller: Auth
+  action: verifyEmail
+
+/check-password:
+  controller: Auth
+  action: checkPassword
+
+/debug-db:
+  controller: Auth
+  action: debugDb
+
 /contact:
   controller: Base
   action: contact
@@ -9,15 +45,3 @@
 /mon-super-portfolio:
   controller: Base
   action: portfolio
-
-/login:
-  controller: Auth
-  action: login
-
-/logout:
-  controller: Auth
-  action: logout
-
-/register:
-  controller: Auth
-  action: register

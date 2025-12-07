@@ -1,6 +1,3 @@
-DirectoryIndex public/index.php
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /public/index.php [QSA,L]
+Options -Indexes DirectoryIndex public/index.php RewriteEngine On RewriteBase
+/phptest/www/ RewriteCond %{REQUEST_FILENAME} !-f RewriteCond
+%{REQUEST_FILENAME} !-d RewriteRule ^(.*)$ public/index.php [L]
